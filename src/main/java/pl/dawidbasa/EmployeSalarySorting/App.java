@@ -23,12 +23,10 @@ public class App {
 				new Employee("Kamil", 12000));
 
 		// 1. Sort Staff by name
-		Collections.sort(employess, (e1, e2) -> e1.getName().compareTo(e2.getName()));
-		System.out.println(employess);
+		System.out.println(App.sortEmployessByName(employess));
 
 		// 2. Sort Staff by salary
-		employess.sort(Comparator.comparingDouble(Employee::getSalary).reversed());
-		System.out.println(employess);
+		System.out.println(App.sortEmployessBySalary(employess));
 
 		// 3. Calculate average salary
 		System.out.println(App.calculateAverageSalary(employess));
@@ -36,6 +34,20 @@ public class App {
 		// 4. Get Staff with sallary bigger than average salary.
 		System.out.println(filterEmployees(employess, isSalaryBiggerThanAverage(App.calculateAverageSalary(employess))));
 
+	}
+	
+	
+	public static List<Employee> sortEmployessByName(List<Employee> employess){
+		Collections.sort(employess, (e1, e2) -> e1.getName().compareTo(e2.getName()));
+		return employess;
+	}
+	
+	public static List<Employee> sortEmployessBySalary(List<Employee> employess){
+		employess.sort
+			(Comparator.comparingDouble(Employee::getSalary)
+					.reversed());
+		return employess;
+		
 	}
 
 	public static List<Employee> filterEmployees(List<Employee> employees, Predicate<Employee> predicate) {
