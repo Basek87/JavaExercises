@@ -1,4 +1,4 @@
-package pl.dawidbasa.EmployeeSalarySortingTest;
+package pl.dawidbasa.employeeSalarySortingTest;
 
 import static org.junit.Assert.assertEquals;
 
@@ -7,8 +7,8 @@ import java.util.List;
 
 import org.junit.Test;
 
-import pl.dawidbasa.EmployeSalarySorting.App;
-import pl.dawidbasa.EmployeSalarySorting.Employee;
+import pl.dawidbasa.employeSalarySorting.App;
+import pl.dawidbasa.employeSalarySorting.Employee;
 
 public class EmployeeTest {
 
