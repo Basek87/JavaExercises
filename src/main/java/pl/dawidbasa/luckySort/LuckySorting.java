@@ -7,6 +7,8 @@ import java.util.stream.Collectors;
 
 public class LuckySorting {
 
+	static int COUNT;
+
 	static void luckySort(ArrayList<String> strings, Comparator<String> comp) {
 
 		// Shuffle to get random list
@@ -15,17 +17,17 @@ public class LuckySorting {
 		System.out.println("First shuffle game starts" + strings);
 		System.out.println("Expected list: " + strings.stream().sorted(comp).collect(Collectors.toList()));
 
-		int count = 0;
+		COUNT = 0;
 		// If list is not sorted as expected - shuffle again
 		while (!strings.equals(strings.stream().sorted(comp).collect(Collectors.toList()))) {
 
 			System.out.println("false... shuffling" + strings);
 			Collections.shuffle(strings);
-			count++;
-		}
+			COUNT++;
 
+		}
 		System.out.println("Good sequence" + strings);
-		System.out.println("Succeeded in: " + count + " attempts");
+		System.out.println("Succeeded in: " + COUNT + " attempts");
 	}
 
 	// comparator from shortest to longest string
@@ -36,7 +38,7 @@ public class LuckySorting {
 	public static void main(String args[]) {
 
 		ArrayList<String> list = new ArrayList<>();
-
+		// Be carefull with 9 elements it can take some time to finish sometime 300k attempts :)
 		list.add("a");
 		list.add("ab");
 		list.add("abc");
@@ -46,9 +48,7 @@ public class LuckySorting {
 		list.add("abcdefg");
 		list.add("abcdefgh");
 		list.add("abcdefghi");
-
-		luckySort(list, LuckySorting.comparelists());
-
+		
+		luckySort(list, comparelists());
 	}
-
 }
