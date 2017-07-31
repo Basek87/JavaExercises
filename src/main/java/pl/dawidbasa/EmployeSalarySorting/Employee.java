@@ -1,4 +1,4 @@
-package pl.dawidbasa.EmployeSalarySorting;
+package pl.dawidbasa.employeSalarySorting;
 
 public class Employee {
 
