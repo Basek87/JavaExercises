@@ -1,4 +1,4 @@
-package pl.dawidbasa.EmployeSalarySorting;
+package pl.dawidbasa.employeSalarySorting;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -35,7 +35,6 @@ public class App {
 		System.out.println(filterEmployees(employess, isSalaryBiggerThanAverage(App.calculateAverageSalary(employess))));
 
 	}
-	
 	
 	public static List<Employee> sortEmployessByName(List<Employee> employess){
 		Collections.sort(employess, (e1, e2) -> e1.getName().compareTo(e2.getName()));
