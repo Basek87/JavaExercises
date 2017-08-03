@@ -3,6 +3,7 @@ package pl.dawidbasa.luckySort;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.List;
 import java.util.stream.Collectors;
 
 public class LuckySorting {
@@ -11,21 +12,23 @@ public class LuckySorting {
 
 	static void luckySort(ArrayList<String> strings, Comparator<String> comp) {
 
+		List<String> expectedList = strings.stream().sorted(comp).collect(Collectors.toList());
 		// Shuffle to get random list
 		Collections.shuffle(strings);
-
 		System.out.println("First shuffle game starts" + strings);
-		System.out.println("Expected list: " + strings.stream().sorted(comp).collect(Collectors.toList()));
-
+	
 		COUNT = 0;
 		// If list is not sorted as expected - shuffle again
-		while (!strings.equals(strings.stream().sorted(comp).collect(Collectors.toList()))) {
+		while (!strings.equals(strings.stream()
+				.sorted(comp)
+				.collect(Collectors.toList()))) {
 
 			System.out.println("false... shuffling" + strings);
 			Collections.shuffle(strings);
 			COUNT++;
-
 		}
+		
+		System.out.println("Expected list: " + expectedList);
 		System.out.println("Good sequence" + strings);
 		System.out.println("Succeeded in: " + COUNT + " attempts");
 	}
