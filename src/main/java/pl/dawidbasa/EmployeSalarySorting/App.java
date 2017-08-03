@@ -17,7 +17,8 @@ public class App {
 	public static List<Employee> sortEmployeesBySalary(List<Employee> Employees){
 		Employees.sort
 			(Comparator.comparingDouble(Employee::getSalary)
-					.reversed().thenComparing((e1, e2) -> e1.getName().compareTo(e2.getName())));
+					.reversed()
+					.thenComparing(Employee::getName));
 		return Employees;
 		
 	}
