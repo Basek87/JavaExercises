@@ -39,7 +39,6 @@ public class App {
 				.getAsDouble();
 	}
 	
-	
 	public static void main(String[] args) {
 
 		List<Employee> Employees = Arrays.asList(
@@ -52,7 +51,7 @@ public class App {
 				new Employee("Mariusz", 1234),
 				new Employee("Micha³", 8503), 
 				new Employee("Kamil", 12000));
-
+		
 		// 1. Sort Staff by name
 		System.out.println("Sort By name " + App.sortEmployeesByName(Employees));
 
@@ -63,7 +62,7 @@ public class App {
 		System.out.println("Average Salary " + App.calculateAverageSalary(Employees));
 
 		// 4. Get Staff with sallary bigger than average salary.
-		System.out.println("Staff with sallary bigger than average " +filterEmployees(Employees, isSalaryBiggerThanAverage(App.calculateAverageSalary(Employees))));
+		System.out.println("Staff with sallary bigger than average " + filterEmployees(Employees, isSalaryBiggerThanAverage(App.calculateAverageSalary(Employees))));
 
 	}
 	
